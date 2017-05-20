@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+
+#topFrame{
+	display: block;
+    max-width: 100%!important;
+    width: 1170px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+    min-height: 80px;
+    max-height: 80px;
+    padding: 18px;
+    margin-left: auto;
+  	margin-right: auto;
+}
+
+#logoFrame{
+    height: 45px;
+}

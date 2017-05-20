@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="css/index.css" rel="stylesheet"></link>
+<link href="css/bootstrap.min.css" rel="stylesheet"></link>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<header>
+		<div id="topFrame">
+			<a href="/"> <img th:src="@{/images/logo.png}" height="45"
+				width="auto" alt="logo.png" />
+			</a>
+			<h4 style="float: right; display: inline-block">HR APPLICATION</h4>
+		</div>
+	</header>
+
+	<div class="container">
+		<div id="searchBar" class="col-md-offset-3" style="margin-top:2%">
+			<div class="col-lg-6" style="margin-top: 0.5%">
+				<div class="input-group">
+					<input type="text" class="form-control"
+						placeholder="Search Listings" /> <span class="input-group-btn">
+						<button class="btn btn-default" type="button">Go!</button>
+					</span>
+				</div>
+
+			</div>
+
+			<a href="/login" style="margin-left:5%" > 
+			<img th:src="@{/images/user.png}" height="45"
+				width="auto" alt="user.png"/>
+			<span id="username">Guest</span>
+			</a>
+
+		</div>
+			
+		<div id="listing">
+		<h4>Listings</h4>
+		<hr/>
+		</div>
+	
+	</div>
+</body>
+</html>

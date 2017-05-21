@@ -26,6 +26,17 @@ public class JobApplication {
 	@ManyToOne
 	private Job job;
 	
+<<<<<<< HEAD
+=======
+	public JobApplication(String name, String email, String phone, String address, String thoughts){
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
+		this.thoughts = thoughts;
+	}
+
+>>>>>>> origin/master
 	public int getJobApplicationId() {
 		return jobApplicationId;
 	}

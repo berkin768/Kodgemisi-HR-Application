@@ -25,6 +25,16 @@ public class Job {
 	@Column(nullable=false)
 	private String lastApplicationDate;
 	
+<<<<<<< HEAD
+=======
+	public Job(String jobTitle, String jobDescription, Integer numberOfPersonToHire){
+		this.jobTitle = jobTitle;
+		this.jobDescription = jobDescription;
+		this.numberOfPersonToHire = numberOfPersonToHire;
+	}
+	
+	
+>>>>>>> origin/master
 	public Integer getJobId() {
 		return jobId;
 	}

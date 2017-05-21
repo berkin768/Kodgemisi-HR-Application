@@ -16,6 +16,11 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 public class SessionConfig {
 
+<<<<<<< HEAD
+=======
+	
+
+>>>>>>> origin/master
 	@Bean
 	public SessionFactory sessionFactory(DataSource dataSource) {
 	    Properties properties = new Properties();

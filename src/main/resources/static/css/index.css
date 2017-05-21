@@ -16,6 +16,7 @@
 
 #logoFrame{
     height: 45px;
+<<<<<<< HEAD
 }
 
 /* Dropdown Button */
@@ -54,3 +55,6 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+=======
+}
+>>>>>>> origin/master

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title>Admin Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="css/index.css" rel="stylesheet"></link>
+<link href="css/bootstrap.min.css" rel="stylesheet"></link>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<header>
+		<div id="topFrame">
+			<a href="/"> <img th:src="@{/images/logo.png}" height="45"
+				width="auto" alt="logo.png" />
+			</a>
+			<h4 style="float: right; display: inline-block">HR APPLICATION</h4>
+		</div>
+	</header>
+	
+	<div class="container">
+		<button id="create" type="button">Create</button>
+		<button id="list" type="button">Listings</button>	
+		
+		<div class="alert alert-success" id="createAlert">
+			<strong>Success!</strong>
+			<p id="createMessage">Job</p>
+		</div>
+		
+	</div>
+	
+	
+	
+	<script src="js/admin.js"></script>
+</body>
+</html>

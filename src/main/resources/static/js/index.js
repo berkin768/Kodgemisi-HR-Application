@@ -56,6 +56,7 @@ if (!jQuery) { throw new Error("This page requires jQuery") }
 		$(function () {	
 			var userName = $("#username").text();			
 			if(userName.trim() != "Guest"){
+				$("#userImage").attr("src", "/images/admin.png")
 				$("#adminPage").css('display', 'inherit');    
 				$("#signOut").css('display', 'inherit');
 				$("#loginArea").css('display', 'none');
@@ -83,9 +84,6 @@ if (!jQuery) { throw new Error("This page requires jQuery") }
 		e.preventDefault();
 		document.location.href = "/admin";
 	});
-
-
-
 
 
 

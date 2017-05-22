@@ -23,18 +23,18 @@ public class AdminController {
 
 	@Autowired
 	private JobService jobService;
-	
+
 	@RequestMapping(path="")
 	public String index(){
 		return "admin";
 	}
-	
-	
+
+
 	@RequestMapping(path = "/create", method = RequestMethod.GET)
 	public String create(){
 		return "create";
 	}
-	
+
 	@RequestMapping(path="/done", method = RequestMethod.POST,produces="application/json")
 	public @ResponseBody String addJob(@RequestParam String title, @RequestParam String description,@RequestParam int person, @RequestParam String date) {
 
@@ -43,29 +43,36 @@ public class AdminController {
 		newJob.setJobDescription(description);
 		newJob.setNumberOfPersonToHire(person);
 		newJob.setLastApplicationDate(date);
-		
+
 		jobService.create(newJob);
-		
+
 		JsonObject result = Json.createObjectBuilder()
-                .add("isCreated", true)
-                .add("jobTitle", newJob.getJobTitle())
-                .build();
-				
+				.add("isCreated", true)
+				.add("jobTitle", newJob.getJobTitle())
+				.build();
+
 		return result.toString();
 	}
-	
+
 	@RequestMapping(path="/list")
 	public ModelAndView list(Model model){
 		ModelAndView mav = new ModelAndView("list");
-        mav.addObject("job", jobService.findAll());  
+		mav.addObject("job", jobService.findAll());  
 		return mav;
 	}
-	
+
 	@RequestMapping(path = "/{id}/delete", method = RequestMethod.GET)
 	public String delete(RedirectAttributes redirectAttributes, @PathVariable("id") Integer id){
 		String title = jobService.deleteById(id);
 
 		redirectAttributes.addFlashAttribute("message", title + " is deleted.");
 		return "redirect:/admin/list";
+	}
+	
+	@RequestMapping(path="/job/{id}/details", method = RequestMethod.GET)
+	public ModelAndView jobDetails(@PathVariable Integer id){				
+		ModelAndView mav = new ModelAndView("details");
+		mav.addObject("job", jobService.findID(id));
+		return mav;
 	}
 }

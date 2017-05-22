@@ -11,10 +11,10 @@ import kodgemisi.hr.service.UserService;
 
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private JobService jobService;
 	
@@ -23,10 +23,10 @@ public class HomeController {
 		User newUser = new User();
 		newUser.setUsername("berkin768");
 		newUser.setPassword("password");
-		
+
 		userService.create(newUser);
 		ModelAndView mav = new ModelAndView("index");
-        mav.addObject("job", jobService.findAll());
-        return mav;
-	}
+		mav.addObject("job", jobService.findAll());
+		return mav;
+	}	
 }

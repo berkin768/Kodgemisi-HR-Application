@@ -44,4 +44,12 @@ if (!jQuery) { throw new Error("This page requires jQuery") }
 		e.preventDefault();
 		window.location.href = '/admin/list';   
 	});
+	
+	$("#goBack").click(function(e){
+		e.preventDefault();
+		debugger
+		window.location.href = '/admin';   
+	});
+	
+	
 })(jQuery);

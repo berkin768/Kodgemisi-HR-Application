@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 public class Application extends WebMvcAutoConfiguration{
 
 	public static void main(String[] args) {
-        SpringApplication.run(Application.class);
-    }
-	
+		SpringApplication.run(Application.class);
+	}
+
 
 	public void run(String... args) throws Exception {
 	}

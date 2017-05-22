@@ -22,19 +22,31 @@
 	</header>
 
 	<div class="container">
-		<div>
-		<label><b>Job Title</b></label> 
-		<input id="title" type="text" placeholder="Job Title" required="required"></input>
-		<label><b>Job Description</b></label> 
-		<input id="description" type="text" placeholder="Job Description" required="required"></input>	
-		<label><b>Person # To Hire</b></label> 
-		<input id="person" type="text" placeholder="Number Of Person" required="required"></input>			
-		<label><b>Last Date:</b></label> 
-		<input id="date" type="text" placeholder="Last Date" required="required"></input>			
-			<button id="set">Continue</button>
-			
+		<div id="inputGroup">
+			<div class="inputFrame" id="titleFrame">
+				<span class="inputLabel label label-primary">Job Title</span> <input
+					id="title" type="text" placeholder="Job Title" required="required"></input>
+			</div>
+			<div class="inputFrame" id="descriptionFrame">
+				<span class="inputLabel label label-primary">Job Description</span>
+				<input id="description" type="text" placeholder="Job Description"
+					required="required"></input>
+			</div>
+			<div class="inputFrame" id="personFrame">
+				<span class="inputLabel label label-primary">Person # To Hire</span>
+				<input id="person" type="number" placeholder="Number Of Person"
+					required="required"></input>
+			</div>
+			<div class="inputFrame" id="dateFrame">
+				<span class="inputLabel label label-primary">Last Date</span> <input
+					id="date" type="text" placeholder="Last Date" required="required"></input>
+
+
+			</div>
 		</div>
+		<button class="btn btn-success" id="set"
+			style="margin: 0 auto; display: block;">Continue</button>
 	</div>
-<script src="/js/admin.js"></script>
+	<script src="/js/admin.js"></script>
 </body>
 </html>

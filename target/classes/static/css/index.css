@@ -1,5 +1,18 @@
 @CHARSET "UTF-8";
 
+#myDropdown{
+	background-color:rgb(210, 212, 226);
+}
+
+.inputFrame{
+	display: table;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.inputLabel{
+	 margin-right: 10px;
+}
 
 #topFrame{
 	display: block;
@@ -16,12 +29,11 @@
 
 #logoFrame{
     height: 45px;
-<<<<<<< HEAD
 }
 
-/* Dropdown Button */
 .dropbtn {
     color: white;
+    border: none;
     cursor: pointer;
 }
 
@@ -35,6 +47,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
+    background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -55,6 +68,3 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-=======
-}
->>>>>>> origin/master

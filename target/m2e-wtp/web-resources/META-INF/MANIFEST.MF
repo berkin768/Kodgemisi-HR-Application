@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: kodgemisi.hr
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: berkin
+Built-By: berki
 Implementation-Vendor-Id: com.berkin
-Build-Jdk: 1.8.0_131
+Build-Jdk: 1.8.0_121
 Implementation-URL: http://projects.spring.io/spring-boot/kodgemisi.hr
  /
 Created-By: Maven Integration for Eclipse

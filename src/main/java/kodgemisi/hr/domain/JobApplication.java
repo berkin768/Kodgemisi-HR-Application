@@ -1,47 +1,44 @@
 package kodgemisi.hr.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class JobApplication {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int jobApplicationId;
+	private Integer jobApplicationId;
 	
 	@Column(nullable=false)
 	private String name;
+	
 	@Column(nullable=false)
 	private String email;
+	
 	@Column(nullable=false)
 	private String phone;
+	
 	@Column(nullable=false)
 	private String address;
+	
 	@Column(nullable=false)
 	private String thoughts;
 	
 	@ManyToOne
+	@JoinColumn(name = "jobId")
 	private Job job;
 	
-<<<<<<< HEAD
-=======
-	public JobApplication(String name, String email, String phone, String address, String thoughts){
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
-		this.address = address;
-		this.thoughts = thoughts;
-	}
-
->>>>>>> origin/master
-	public int getJobApplicationId() {
+	public Integer getJobApplicationId() {
 		return jobApplicationId;
 	}
 
-	public void setJobApplicationId(int jobApplicationId) {
+	public void setJobApplicationId(Integer jobApplicationId) {
 		this.jobApplicationId = jobApplicationId;
 	}
 
@@ -83,5 +80,13 @@ public class JobApplication {
 
 	public void setThoughts(String thoughts) {
 		this.thoughts = thoughts;
+	}
+
+	public Job getJob() {
+		return job;
+	}
+
+	public void setJob(Job job) {
+		this.job = job;
 	}
 }

@@ -5,6 +5,7 @@
 <title>Admin Page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="css/index.css" rel="stylesheet"></link>
+<link href="css/admin.css" rel="stylesheet"></link>
 <link href="css/bootstrap.min.css" rel="stylesheet"></link>
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -20,20 +21,22 @@
 			<h4 style="float: right; display: inline-block">HR APPLICATION</h4>
 		</div>
 	</header>
-	
+
 	<div class="container">
-		<button id="create" type="button">Create</button>
-		<button id="list" type="button">Listings</button>	
-		
-		<div class="alert alert-success" id="createAlert">
-			<strong>Success!</strong>
-			<p id="createMessage">Job</p>
+		<div class="alert alert-info" role="alert">Admin Panel</div>
+		<div id="buttonFrame">
+			<div style="display: table; margin: 0 auto;">
+				<button class="btn btn-success" id="create" type="button"
+					style="margin-right: 10px">Create</button>
+				<button class="btn btn-info" id="list" type="button">Listings</button>
+			</div>
+
 		</div>
-		
+
 	</div>
-	
-	
-	
+
+
+
 	<script src="js/admin.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
 <link href="css/index.css" rel="stylesheet"></link>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+<link href="/css/index.css" rel="stylesheet"></link>
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
@@ -21,14 +22,20 @@
 	</header>
 
 	<div class="container">
-		<label><b>Username</b></label> 
-		<input id="username" type="text" placeholder="Enter Username" required="required"></input>
-		<label><b>Password</b></label> 
-		<input id="password" type="password" placeholder="Enter Password" required="required"></input>
-
-		<button id="login">Login</button>
+		<div class="inputFrame">
+			<span class="inputLabel label label-primary">Username</span> <input
+				id="username" type="text" placeholder="Enter Username"
+				required="required"></input>
+		</div>
+		
+		<div class="inputFrame">
+			<span class="inputLabel label label-primary">Password</span> <input
+				id="password" type="password" placeholder="Enter Password"
+				required="required"></input>
+		</div>
+		<button class="btn btn-success" id="login" style="margin: 0 auto;display: block;">Login</button>
 	</div>
-	
-<script src="js/login.js"></script>
+
+	<script src="js/login.js"></script>
 </body>
 </html>

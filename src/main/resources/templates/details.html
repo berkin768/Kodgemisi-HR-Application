@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title>Details</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/css/bootstrap.min.css" rel="stylesheet"></link>
+<link href="/css/index.css" rel="stylesheet"></link>
+<script src="/js/jquery-3.2.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<header>
+		<div id="topFrame">
+			<a href="/"> <img th:src="@{/images/logo.png}" height="45"
+				width="auto" alt="logo.png" />
+			</a>
+			<h4 style="float: right; display: inline-block">HR APPLICATION</h4>
+		</div>
+	</header>
+
+	<div class="container">
+		<tr th:each="job : ${job}">
+			<div class="alert alert-info" role="alert">
+				Details of
+				<div style="display: inline-block; font-weight: bold"
+					th:text="${job.jobTitle}"></div>
+			</div>
+		</tr>
+
+		<tr th:each="jobApp : ${job.jobApplications}">
+
+			<div class="col-md-2" id="jobDescription">
+				<span class="label label-primary">Name</span>
+				<td th:text="${jobApp.name}" />
+			</div>
+
+			<div class="col-md-2" id="jobDescription">
+				<span class="label label-primary">Email</span>
+				<td th:text="${jobApp.email}" />
+			</div>
+
+			<div class="col-md-2" id="numberOfPersonToHire">
+				<span class="label label-success">Phone</span>
+				<td th:text="${jobApp.phone}" />
+			</div>
+
+			<div class="col-md-3" id="lastApplicationDate">
+				<span class="label label-info">Address</span>
+				<td th:text="${jobApp.address}" />
+			</div>
+
+			<div class="col-md-3" id="lastApplicationDate">
+				<span class="label label-info">Thoughts</span>
+				<td th:text="${jobApp.thoughts}" />
+			</div>
+			
+			<hr style="display: inline-block;width: 100%;"/>
+		</tr>
+		<button class="btn btn-warning" id="goBack" type="button"
+			style="margin: 0 auto; display: block;">Go Back</button>
+	</div>
+
+	<script src="/js/admin.js"></script>
+</body>
+</html>

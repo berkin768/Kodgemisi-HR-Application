@@ -1,40 +1,37 @@
 package kodgemisi.hr.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Job {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer jobId;
-	
+
 	@Column(nullable=false)
 	private String jobTitle;
-	
+
 	@Column(nullable=false)
 	private String jobDescription;
-	
+
 	@Column(nullable=false)
 	private Integer numberOfPersonToHire;
-	
+
 	@Column(nullable=false)
 	private String lastApplicationDate;
 	
-<<<<<<< HEAD
-=======
-	public Job(String jobTitle, String jobDescription, Integer numberOfPersonToHire){
-		this.jobTitle = jobTitle;
-		this.jobDescription = jobDescription;
-		this.numberOfPersonToHire = numberOfPersonToHire;
-	}
-	
-	
->>>>>>> origin/master
+	@OneToMany(fetch=FetchType.LAZY, cascade = javax.persistence.CascadeType.ALL, mappedBy="job")
+	private List<JobApplication> jobApplications;
+
 	public Integer getJobId() {
 		return jobId;
 	}
@@ -67,4 +64,14 @@ public class Job {
 	public void setLastApplicationDate(String lastApplicationDate) {
 		this.lastApplicationDate = lastApplicationDate;
 	}
+
+	public List<JobApplication> getJobApplications() {
+		return jobApplications;
+	}
+
+	public void setJobApplications(List<JobApplication> jobApplications) {
+		this.jobApplications = jobApplications;
+	}
+
+	
 }

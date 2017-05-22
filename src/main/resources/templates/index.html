@@ -5,13 +5,8 @@
 
 <title>Home</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<<<<<<< HEAD
 <link href="css/bootstrap.min.css" rel="stylesheet"></link>
 <link href="css/index.css" rel="stylesheet"></link>
-=======
-<link href="css/index.css" rel="stylesheet"></link>
-<link href="css/bootstrap.min.css" rel="stylesheet"></link>
->>>>>>> origin/master
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
@@ -28,12 +23,8 @@
 	</header>
 
 	<div class="container">
-<<<<<<< HEAD
 		<div id="searchBar" class="col-md-offset-3" style="margin-top: 2%">
-=======
-		<div id="searchBar" class="col-md-offset-3" style="margin-top:2%">
->>>>>>> origin/master
-			<div class="col-lg-6" style="margin-top: 0.5%">
+			<div class="col-lg-6">
 				<div class="input-group">
 					<input type="text" class="form-control"
 						placeholder="Search Listings" /> <span class="input-group-btn">
@@ -42,76 +33,62 @@
 				</div>
 
 			</div>
-<<<<<<< HEAD
-			
+
 			<div id="logoFrame" class="dropdown">
-				<a href="/login" style="margin-left: 5%"> <img class="dropbtn"
-					th:src="@{/images/user.png}" height="45" width="auto"
+				<a href="/login" style="margin-left: 5%"> <img id="userImage" class="dropbtn"
+					th:src="@{/images/user.png}" height="35" width="auto"
 					alt="user.png" /> <span id="username">Guest</span>
 				</a>
 				<div id="myDropdown" class="dropdown-content">
-					<a id="adminPage" style="display: none" href="#">Admin Page</a> <a						
+					<a id="adminPage" style="display: none" href="#">Admin Page</a> <a
 						id="signOut" style="display: none" href="#">Log Out</a> <a
 						id="loginArea" href="#">Log In</a>
 				</div>
 			</div>
-
-			<!-- <a href="/login" style="margin-left: 5%"> <img
-				th:src="@{/images/user.png}" height="45" width="auto" alt="user.png" />
-				<span id="username">Guest</span>
-			</a>-->
-
 		</div>
 
 		<div id="listing">
 			<h4>Listings</h4>
 			<hr />
 			<div id="Job">
-			<tr th:each="job : ${job}">
+			<div th:if="${job.isEmpty()}">
+				<div class="alert alert-warning" role="alert">
+					<strong>Warning! </strong>There is no job to list
+				</div>
+			</div>
+			
+				<tr th:each="job : ${job}">
+					<div class="col-md-3" id="JobTitle">
+						<span class="label label-default">Job Title</span>
+						<td th:text="${job.jobTitle}" />
+					</div>
 
-				<div class="col-md-3" id="JobTitle">
-					<span class="label label-default">Job Title</span>
-					<td th:text="${job.jobTitle}" />
-				</div>
+					<div class="col-md-3" id="jobDescription">
+						<span class="label label-primary">Job Description</span>
+						<td th:text="${job.jobDescription}" />
+					</div>
 
-				<div class="col-md-3" id="jobDescription">
-					<span class="label label-primary">Job Description</span>
-					<td th:text="${job.jobDescription}" />
-				</div>
-				
-				<div class="col-md-3" id="numberOfPersonToHire">
-					<span class="label label-success">Number Of Candidates</span>
-				<td th:text="${job.numberOfPersonToHire}" />
-				</div>
-				
-				<div class="col-md-3" id="lastApplicationDate">
-					<span class="label label-info">Last Date</span>
-				<td th:text="${job.lastApplicationDate}" />
-				</div>				
-				<hr />
-			</tr>
-		</div>
+					<div class="col-md-3" id="numberOfPersonToHire">
+						<span class="label label-success">Number Of Candidates</span>
+						<td th:text="${job.numberOfPersonToHire}" />
+					</div>
+
+					<div class="col-md-2" id="lastApplicationDate">
+						<span class="label label-info">Last Date</span>
+						<td th:text="${job.lastApplicationDate}" />
+					</div>
+					
+					<a th:href="@{/app/{jobID}/application(jobID=${job.jobId})}"> <img
+						th:src="@{/images/apply.png}" height="20" width="auto"
+						alt="apply.png" style="cursor: pointer;" /> Apply Job
+					</a>
+					<hr />
+				</tr>
+			</div>
 		</div>
 
 	</div>
 
 	<script src="js/index.js"></script>
-=======
-
-			<a href="/login" style="margin-left:5%" > 
-			<img th:src="@{/images/user.png}" height="45"
-				width="auto" alt="user.png"/>
-			<span id="username">Guest</span>
-			</a>
-
-		</div>
-			
-		<div id="listing">
-		<h4>Listings</h4>
-		<hr/>
-		</div>
-	
-	</div>
->>>>>>> origin/master
 </body>
 </html>

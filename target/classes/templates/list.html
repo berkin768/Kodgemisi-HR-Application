@@ -14,7 +14,7 @@
 <body>
 
 
-	<header>
+	<header style="margin-bottom: 15px">
 		<div id="topFrame">
 			<a href="/"> <img th:src="@{/images/logo.png}" height="45"
 				width="auto" alt="logo.png" />
@@ -29,6 +29,14 @@
 			<strong>Success!</strong>
 		</div>
 		<div id="Job">
+
+			<div th:if="${job.isEmpty()}">
+				<div class="alert alert-warning" role="alert">
+					<strong>Warning! </strong>There is no job to list
+				</div>
+				<button class="btn btn-warning" id="goBack" type="button" style="margin: 0 auto;display: block;">Go Back</button>
+			</div>
+			
 			<tr th:each="job : ${job}">
 
 				<div class="col-md-1" id="id">
@@ -36,7 +44,7 @@
 					<td th:text="${job.jobId}" />
 				</div>
 
-				<div class="col-md-3" id="JobTitle">
+				<div class="col-md-2" id="JobTitle">
 					<span class="label label-warning">Job Title</span>
 					<td th:text="${job.jobTitle}" />
 				</div>
@@ -56,6 +64,12 @@
 					<td th:text="${job.lastApplicationDate}" />
 				</div>
 
+				<a style="padding-right: 10px"
+					th:href="@{/admin/job/{jobID}/details(jobID=${job.jobId})}"> <img
+					th:src="@{/images/apply.png}" height="20" width="auto"
+					alt="apply.png" style="cursor: pointer" /> Details
+				</a>
+
 				<a th:href="@{/admin/{jobID}/delete(jobID=${job.jobId})}"> <img
 					th:src="@{/images/delete.png}" height="20" width="auto"
 					alt="delete.png" style="cursor: pointer;" /> Delete
@@ -66,6 +80,6 @@
 
 	</div>
 
-
+<script src="/js/admin.js"></script>
 </body>
 </html>

@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kodgemisi.hr.domain.Job;
 import kodgemisi.hr.domain.JobApplication;
 import kodgemisi.hr.repository.JobApplicationRepository;
 
@@ -23,6 +22,13 @@ public class JobApplicationService {
 	
 	public JobApplication create(JobApplication newJobApplication){
 		return jobAppRepo.save(newJobApplication);
+	}
+	
+	public String deleteById(Integer id) {
+		JobApplication jobApp = jobAppRepo.findOne(id);	
+		String jobAppName = jobApp.getName();
+		jobAppRepo.delete(jobApp);  
+		return jobAppName;
 	}
 	
 	public JobApplication findID(Integer id){

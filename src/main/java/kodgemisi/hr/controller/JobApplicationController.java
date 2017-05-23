@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kodgemisi.hr.domain.Job;
 import kodgemisi.hr.domain.JobApplication;
@@ -50,6 +51,7 @@ public class JobApplicationController {
 		newJobApplication.setThoughts(thoughts);
 		newJobApplication.setJob(job);
 		
+		
 		jobApplicationService.create(newJobApplication);
 		
 		JsonObject result = Json.createObjectBuilder()
@@ -58,5 +60,15 @@ public class JobApplicationController {
 				.build();
 
 		return result.toString();
+	}
+	
+	
+	@RequestMapping(path = "/{jobId}/{id}/delete", method = RequestMethod.GET)
+	public String delete(RedirectAttributes redirectAttributes, @PathVariable("id") Integer id,@PathVariable("jobId") Integer jobId){
+		String name = jobApplicationService.deleteById(id);
+
+		redirectAttributes.addFlashAttribute("message", name + " is deleted.");
+		String url = "redirect:/admin/job/" + jobId + "/details";
+		return url;
 	}
 }

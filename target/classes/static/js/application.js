@@ -28,7 +28,6 @@ if (!jQuery) { throw new Error("This page requires jQuery") }
 			},
 			dataType: 'json',
 			success : function(json) {  
-				debugger
 				window.alert("Apply success to " + json.jobTitle);	 
 				window.location.href = '/';  		
 			}
@@ -39,6 +38,5 @@ if (!jQuery) { throw new Error("This page requires jQuery") }
 		e.preventDefault();
 		create();
 	});
-
 
 })(jQuery);

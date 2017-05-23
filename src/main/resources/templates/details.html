@@ -23,6 +23,10 @@
 	</header>
 
 	<div class="container">
+		<div class="alert alert-success" th:if="${message != null}"
+			th:text="${message}">
+			<strong>Success!</strong>
+		</div>
 		<tr th:each="job : ${job}">
 			<div class="alert alert-info" role="alert">
 				Details of
@@ -33,32 +37,39 @@
 
 		<tr th:each="jobApp : ${job.jobApplications}">
 
-			<div class="col-md-2" id="jobDescription">
+			<div style="word-wrap:break-word" class="col-md-2">
 				<span class="label label-primary">Name</span>
-				<td th:text="${jobApp.name}" />
+				<td  th:text="${jobApp.name}" />
 			</div>
 
-			<div class="col-md-2" id="jobDescription">
+			<div style="word-wrap:break-word" class="col-md-2">
 				<span class="label label-primary">Email</span>
-				<td th:text="${jobApp.email}" />
+				<td style="word-wrap:break-word" th:text="${jobApp.email}" />
 			</div>
 
-			<div class="col-md-2" id="numberOfPersonToHire">
+			<div style="word-wrap:break-word" class="col-md-2">
 				<span class="label label-success">Phone</span>
-				<td th:text="${jobApp.phone}" />
+				<td style="word-wrap:break-word" th:text="${jobApp.phone}" />
 			</div>
 
-			<div class="col-md-3" id="lastApplicationDate">
+			<div style="word-wrap:break-word" class="col-md-2">
 				<span class="label label-info">Address</span>
-				<td th:text="${jobApp.address}" />
+				<td style="word-wrap:break-word" th:text="${jobApp.address}" />
 			</div>
 
-			<div class="col-md-3" id="lastApplicationDate">
+			<div style="word-wrap:break-word" class="col-md-3">
 				<span class="label label-info">Thoughts</span>
-				<td th:text="${jobApp.thoughts}" />
+				<td style="word-wrap:break-word" th:text="${jobApp.thoughts}" />
 			</div>
-			
-			<hr style="display: inline-block;width: 100%;"/>
+
+			<a
+				th:href="@{/app/{jobId}/{jobAppId}/delete(jobAppId=${jobApp.jobApplicationId},jobId=${job.jobId})}">
+				<img th:src="@{/images/delete.png}" height="20" width="auto"
+				alt="delete.png" style="cursor: pointer;" /> Delete
+			</a>
+
+			<hr style="display: inline-block; width: 100%;" />
+
 		</tr>
 		<button class="btn btn-warning" id="goBack" type="button"
 			style="margin: 0 auto; display: block;">Go Back</button>

@@ -18,26 +18,14 @@
 			<a href="/"> <img th:src="@{/images/logo.png}" height="45"
 				width="auto" alt="logo.png" />
 			</a>
+
 			<h4 style="float: right; display: inline-block">HR APPLICATION</h4>
-		</div>
-	</header>
 
-	<div class="container">
-		<div id="searchBar" class="col-md-offset-3" style="margin-top: 2%">
-			<div class="col-lg-6">
-				<div class="input-group">
-					<input type="text" class="form-control"
-						placeholder="Search Listings" /> <span class="input-group-btn">
-						<button class="btn btn-default" type="button">Go!</button>
-					</span>
-				</div>
-
-			</div>
-
-			<div id="logoFrame" class="dropdown">
-				<a href="/login" style="margin-left: 5%"> <img id="userImage" class="dropbtn"
-					th:src="@{/images/user.png}" height="35" width="auto"
-					alt="user.png" /> <span id="username">Guest</span>
+			<div id="logoFrame" class="dropdown"
+				style="float: right; margin-right: 10px; margin-top: 3px;">
+				<a href="/login" style="margin-left: 5%"> <img id="userImage"
+					class="dropbtn" th:src="@{/images/user.png}" height="35"
+					width="auto" alt="user.png" /> <span id="username">Guest</span>
 				</a>
 				<div id="myDropdown" class="dropdown-content">
 					<a id="adminPage" style="display: none" href="#">Admin Page</a> <a
@@ -46,17 +34,21 @@
 				</div>
 			</div>
 		</div>
+	</header>
+
+	<div class="container">
+
 
 		<div id="listing">
 			<h4>Listings</h4>
 			<hr />
 			<div id="Job">
-			<div th:if="${job.isEmpty()}">
-				<div class="alert alert-warning" role="alert">
-					<strong>Warning! </strong>There is no job to list
+				<div th:if="${job.isEmpty()}">
+					<div class="alert alert-warning" role="alert">
+						<strong>Warning! </strong>There is no job to list
+					</div>
 				</div>
-			</div>
-			
+
 				<tr th:each="job : ${job}">
 					<div class="col-md-3" id="JobTitle">
 						<span class="label label-default">Job Title</span>
@@ -77,7 +69,7 @@
 						<span class="label label-info">Last Date</span>
 						<td th:text="${job.lastApplicationDate}" />
 					</div>
-					
+
 					<a th:href="@{/app/{jobID}/application(jobID=${job.jobId})}"> <img
 						th:src="@{/images/apply.png}" height="20" width="auto"
 						alt="apply.png" style="cursor: pointer;" /> Apply Job
